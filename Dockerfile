@@ -4,12 +4,17 @@ MAINTAINER April King <april@twoevils.org>
 EXPOSE 80 443
 RUN apt-get update && apt-get install -y \
     git \
-    make \
-    nginx
+    build-essential \
+    nginx \
+    ruby2.0 \
+    ruby2.0-dev
+RUN gem2.0 install jekyll
 
 # Install badssl.com
 ADD . badssl.com
-RUN cd badssl.com ; make install
+WORKDIR badssl.com
+RUN make jekyll
+RUN make install
 
 # Start things up!
 CMD nginx && tail -f /var/log/nginx/access.log /var/log/nginx/error.log

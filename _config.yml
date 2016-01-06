@@ -2,4 +2,5 @@
 
 # Build settings
 keep_files: ["certs/self-signed"]
+exclude: ["badssl.com.png"]
 markdown: kramdown

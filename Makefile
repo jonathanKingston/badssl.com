@@ -37,12 +37,12 @@ install: keys install-keys link
 
 .PHONY: jekyll
 jekyll:
-	DOMAIN="${SITE}" HTTP_DOMAIN="http.${SITE}" jekyll build
+	DOMAIN="${SITE}" HTTP_DOMAIN="http.${SITE}" jekyll build --trace
 	ln -s ../certs _site/common/certs # Create symlink to certs directory
 	./_site/certs/cert-generator/cert-self-signed-symlink-generator.sh # Generate symlinks to self-signed for everything that doesn't exist in certs
 
 .PHONY: docker
-docker: jekyll
+docker:
 	sudo docker build -t badssl .
 
 ## Deployment
