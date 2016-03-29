@@ -215,6 +215,12 @@ longextendedsubdomainnamewithoutdashesinordertotestwordwrapping:
     category: Miscellaneous
     description: |
         This site has a very long hostname intended to break browser interfaces.
+longextendedsubdomainnamewithoutdashesinordertotestwordwrapping.longextendedsubdomainnamewithoutdashesinordertotestwordwrapping.longextendedsubdomainnamewithoutdashesinordertotestwordwrapping:
+    favicon: green
+    background: green
+    category: Miscellaneous
+    description: |
+        This site has a very long hostname intended to break browser interfaces.
 pinning-test:
     favicon: red
     background: red
